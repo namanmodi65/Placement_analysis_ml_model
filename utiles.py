@@ -6,6 +6,7 @@ def preprocess(Age,Gender,Stream,Intership,CGPA,Backlog,Hostel):
         Hostel = 1
     else:
         Hostel = 0
+    
     StreamNumber = 1
     if(Stream == 'Computer Science' or Stream == 'CS' ):
         StreamNumber=2
@@ -23,7 +24,7 @@ def preprocess(Age,Gender,Stream,Intership,CGPA,Backlog,Hostel):
     else:
         Gender = 0
 
-    test_data = np.array([[int(Age),Gender,StreamNumber,int(Intership),int(CGPA),int(Backlog),Hostel]])
+    test_data = np.array([[int(Age),Gender,StreamNumber,int(Intership),float(CGPA),int(Backlog),Hostel]])
     trained_model = joblib.load('model_1.pkl')
     print(test_data)   
     prediction = trained_model.predict(test_data)

@@ -10,7 +10,7 @@
     body {
         margin: 0px;
         padding: 0px;
-        background-color: #F4F4F4;
+        background-color:whitesmoke;
         /* background-size: 100% 100%; */
         height: 1000px;
     }
@@ -105,7 +105,7 @@
         left: 970px;
     }
 
-    #main02a input {
+    #main02a select {
         width: 300px;
         padding: 10px 10px;
     }
@@ -126,7 +126,7 @@
         left: 570px;
     }
 
-    #main03a input {
+    #main03a select {
         width: 300px;
         padding: 10px 10px;
     }
@@ -218,7 +218,7 @@
     #att8 {
         position: absolute;
         top: 455px;
-        left: 970px;
+        left: 570px;
     }
 
     #main08 form label {
@@ -228,10 +228,10 @@
     #main08a {
         position: absolute;
         top: 500px;
-        left: 970px;
+        left: 570px;
     }
 
-    #main08a input {
+    #main08a select {
         width: 300px;
         padding: 10px 10px;
     }
@@ -275,15 +275,41 @@
                     <input type="text"  id="Age" name="Age" placeholder="Age" required="required"">
                 </div>
 
-                <label for="Gender" id="att2">Gender</label>
+                <!-- <label for="Gender" id="att2">Gender</label>
                 <div id="main02a">
                     <input type="text" name="Gender" placeholder="Gender" required="required" id="Gender">
+                </div> -->
+
+                <label for="Gender" id="att2">Gender</label>
+
+                <div id="main02a">
+
+                    <select class="form-select" aria-label="Default select example" age="Gender" id="Gender"  type="text" name="Gender" placeholder="Gender" required="required" id="Gender">
+                        <option selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
                 </div>
 
                 <label for="Stream" id="att3">Stream</label>
                 <div id="main03a">
-                    <input type="text" name="Stream" placeholder="Stream" required="required" id="Stream">
+                    <select class="form-select" aria-label="Default select example" streams="Stream" id="Gender" type="text" name="Stream" placeholder="Stream" required="required" id="Stream" >
+                        <option selected>Streams</option>
+                        <option value="1">Electronics And Communication</option>
+                        <option value="2">Computer Science</option>
+                        <option value="3">Information Technology</option>
+                        <option value="4">Mechanical</option>
+                        <option value="5">Electrical</option>
+                        <option value="6">Civil</option>
+
+
+                    </select>
                 </div>
+
+                <!-- <label for="Stream" id="att3">Stream</label>
+                <div id="main03a">
+                    <input type="text" name="Stream" placeholder="Stream" required="required" id="Stream">
+                </div> -->
 
                 <label for="Internships" id="att4">Internships</label>
                 <div id="main04a">
@@ -307,8 +333,19 @@
 
                 <label for="Hostel" id="att8">Hostel</label>
                 <div id="main08a">
-                    <input type="text" name="Hostel" placeholder="Hostel" required="required" id="Hostel">
+
+                    <select class="form-select" aria-label="Default select example" Hostel="Hostel" id="Hostel" input type="text" name="Hostel" placeholder="Hostel" required="required" id="Hostel">
+                        <option selected>Hostel</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                    <!-- <input type="text" Branch="Hostel" id="Hostel"> -->
                 </div>
+
+                <!-- <label for="Hostel" id="att8">Hostel</label>
+                <div id="main08a">
+                    <input type="text" name="Hostel" placeholder="Hostel" required="required" id="Hostel">
+                </div> -->
             <div id="main09">
                 <button id="GVButton" onclick="output()">Start Analyzing</button>
             </div>
