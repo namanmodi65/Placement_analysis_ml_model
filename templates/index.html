@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="container">
+        <header>
+            <div class="header">
+                <div class="left">Matrix</div>
+            </div>
+
+            <div class="right">
+                <nav class="navbar">
+                    <ul>
+                        <div><button onclick="myFunction()" class="dropbtn" id="menubtn">Menu</button>
+                            <div id="myDropdown" class="dropdown-content">
+                             {%block content %}
+                                <!-- <li><a href="#" class="active"></a></li> -->
+                                <li><a href="/">Home</a></li>
+                                <li><a href="{{url_for('service')}}">Services</a></li>
+                                <li><a href="{{url_for('about')}}">About Us</a></li>
+                                <li><a href="matrix.html">Contact Us</a></li>
+                            {% endblock %}
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="right1">
+                <a href="{{url_for('service')}}"><button id="GSButton">GET Started</button></a>
+            </div>
+    </div>
+    </header>
+    <main>
+        <div id="main01"><strong>Unlocking Your Potential:</strong></div>
+        <div id="main02"> <strong>Analyse to Optimize, Grind to Shine!</strong> </div>
+        <div id="main03"> We Analyse your information and Guide you for Good Placements </div>
+        <div id="main04">
+            <a href="{{url_for('service')}}"><button id="GVButton">GET Started</button></a>
+        </div>
+        <div id="main05"><img src="{{url_for('static',filename='matrix1.png')}}" alt="Error 404"></div>
+        <div id="main06"><img src="{{url_for('static',filename='matrix1.png')}}" alt="Error 404"></div>
+        <div id="main07"><img src="{{url_for('static',filename='matrix 7.png')}}" alt="Error 404"></div>
+        <div id="main08"><img src="{{url_for('static',filename='matrix4.png')}}" alt="Error 404" height="200px" width="350px"></div>
+        <div id="main09"><img src="{{url_for('static',filename='matrix 5.png')}}" alt="Error 404"></div>
+
+        <div class="login">
+     <!-- <title>CAMPUS PLACEMENT ANALYSIS</title>
+	<h1>Campus Placement Analysis Prediction</h1> -->
+    <!-- <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Gender" placeholder="Gender" required="required" />
+		<input type="text" name="Stream" placeholder="Stream" required="required" />
+		<input type="text" name="Intership" placeholder="Intership" required="required" />
+      	<input type="text" name="CGPA " placeholder="CGPA" required="required" />
+        <input type="text" name="Backlog" placeholder="Backlog" required="required" />
+		<input type="text" name="Attendence" placeholder="Attendence" required="required" />
+		<input type="text" name="Hostel" placeholder="Hostel" required="required" />
+        <button type="sumbit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form> -->
+   <br>
+   <br>
+   {{ prediction_text }}
+
+        </div>
+
+            </form>
+
+
+    </main>
+    <footer></footer>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color:bisque;
+        height: 3056px;
+    }
+    .header {
+        height: 90px;
+        background-color: #201C3C;
+    }
+
+    .left {
+        color: aliceblue;
+        font-size: 30px;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .right {
+        position: absolute;
+        top: -10px;
+        left: 735px;
+    }
+
+    .navbar ul {
+        overflow: auto;
+    }
+
+    .navbar li {
+        float: left;
+        list-style: none;
+        margin: 13px 20px;
+        font-size: 20px;
+
+    }
+
+    .navbar li a {
+        padding: 13px 13px;
+        text-decoration: none;
+        color: white;
+    }
+
+
+    .navbar li a:hover {
+        color: white;
+        background-color: #EB843A;
+        border-radius: 30px;
+    }
+
+    .dropbtn {
+        visibility: collapse;
+    }
+
+    #right1 {
+        position: absolute;
+        top: 20px;
+        left: 1355px;
+        border-radius: 30px;
+        background-color: #EB843A;
+        color: #F4F4F4;
+        padding: 13px 13px;
+        font-size: 20px;
+    }
+
+    #GSButton {
+        border: none;
+        text-decoration: none;
+        background-color: #EB843A;
+        cursor: pointer;
+    }
+
+    #main01 {
+        font-size: 50px;
+        position: absolute;
+        text-align: center;
+        top: 150px;
+        left: 460px;
+    }
+
+    #main02 {
+        font-size: 50px;
+        position: absolute;
+        text-align: center;
+        top: 230px;
+        left: 370px;
+    }
+
+    #main03 {
+        font-size: 25px;
+        position: absolute;
+        text-align: center;
+        top: 350px;
+        left: 420px;
+    }
+
+    #main04 {
+        position: absolute;
+        top: 420px;
+        left: 650px;
+        border-radius: 30px;
+        background-color: #EB843A;
+        color: #F4F4F4;
+        padding: 20px 20px;
+        font-size: 25px;
+    }
+
+    #GVButton {
+        border: none;
+        font-size: 20px;
+        text-decoration: none;
+        background-color: #EB843A;
+        cursor: pointer;
+    }
+
+    #main05 img {
+        height: 250px;
+        position: absolute;
+        top: 550px;
+        left: 530px;
+    }
+
+    #main06 img {
+        height: 250px;
+        position: absolute;
+        top: 450px;
+        left: 40px;
+    }
+
+    #main07 img {
+        height: 250px;
+        position: absolute;
+        top: 650px;
+        left: 1020px;
+    }
+
+    #main08 img {
+        height: 250px;
+        position: absolute;
+        top: 320px;
+        left: 1120px;
+    }
+
+    #main09 img {
+        /* height: 250px;
+        width: px; */
+        position: absolute;
+        top: 100px;
+        left: 20px;
+    }
+    .login{
+        position: absolute;
+    top: 80%;
+        left: 30%;
+    }
+</style>
+
+</body>
+</html>
