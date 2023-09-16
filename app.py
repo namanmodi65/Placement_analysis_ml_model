@@ -25,6 +25,10 @@ def service():
 def about():
     return render_template("matrix_about_us.html")
 
+@flask_app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 
 @flask_app.route("/predict", methods = ["GET","POST"])
 def predict():
@@ -43,7 +47,12 @@ def predict():
         result = utiles.preprocess(Age,Gender,Stream,Intership,CGPA,Backlog,Hostel)
         print(result)
         # print(data)
-        return render_template('matrix_services.html',result=result)
+
+        if(result == 1):
+            return render_template('matrix_output01.html',result=result)
+        else: 
+            return render_template('matrix_output02.html',result=result)    
+        # return render_template('matrix_services.html',result=result)
 
 
 if __name__ == "__main__":
